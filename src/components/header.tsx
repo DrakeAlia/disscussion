@@ -21,6 +21,7 @@ export default function Header() {
           <HeaderAuth />
         </div>
       </nav>
+      
     </header>
   );
 }
