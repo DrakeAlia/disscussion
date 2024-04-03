@@ -1,27 +1,58 @@
 import Link from "next/link";
-import { Input } from "./ui/input";
-import HeaderAuth from "./header-auth";
+import { cn } from "@/lib/utils";
+import { Icons } from "@/components/icons";
+import { buttonVariants } from "@/components/ui/button";
+import HeaderAuth from "@/components/header-auth";
+// import { SearchInput } from "@/components/search-input";
+import { Suspense } from "react";
 
 export default function Header() {
   return (
-    <header className="shadow mb-6">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container flex h-14 items-center justify-between">
-        <div>
-          <Link href="/" className="font-bold">
-            Discuss
+        <Link href="/" className="mr-6 flex items-center space-x-2">
+          <Icons.logo className="h-6 w-6" />
+          <span className="hidden font-bold sm:inline-block">Discuss</span>
+        </Link>
+        <Suspense>{/* <SearchInput /> */}</Suspense>
+        <div className="flex items-center gap-1">
+          <Link
+            href="https://github.com/yashug/Discuss"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div
+              className={cn(
+                buttonVariants({
+                  variant: "ghost",
+                }),
+                "w-9 px-0"
+              )}
+            >
+              <Icons.gitHub className="h-4 w-4" />
+              <span className="sr-only">GitHub</span>
+            </div>
           </Link>
-        </div>
-        <div className="flex justify-center">
-          <div>
-            <Input />
-          </div>
-        </div>
-
-        <div className="flex justify-end">
+          <Link
+            href="https://twitter.com/drake___alia"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div
+              className={cn(
+                buttonVariants({
+                  variant: "ghost",
+                }),
+                "w-9 px-0"
+              )}
+            >
+              <Icons.twitter className="h-3 w-3 fill-current" />
+              <span className="sr-only">Twitter</span>
+            </div>
+          </Link>
           <HeaderAuth />
         </div>
       </nav>
-      
     </header>
   );
 }

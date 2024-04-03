@@ -1,5 +1,5 @@
 const paths = {
-    homePath() {
+    home() {
         return "/"
     },
     topicShow(topicSlug: string) {
