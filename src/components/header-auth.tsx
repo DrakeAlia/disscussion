@@ -4,6 +4,7 @@ import { Avatar, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { useSession } from "next-auth/react";
+import { Skeleton } from "./ui/skeleton";
 import React from "react";
 import * as actions from "@/actions";
 
@@ -13,7 +14,7 @@ export default function HeaderAuth() {
   let authContent: React.ReactNode;
 
   if (session.status === "loading") {
-    authContent = null;
+    authContent = <Skeleton className="w-8 h-8 rounded-full" />;
   } else if (session.data?.user) {
     authContent = (
       <Popover>
@@ -23,7 +24,7 @@ export default function HeaderAuth() {
           </Avatar>
         </PopoverTrigger>
         <PopoverContent>
-          <div className="p-4">
+          <div className="flex justify-center p-2">
             <form action={actions.signOut}>
               <Button type="submit">Sign Out</Button>
             </form>

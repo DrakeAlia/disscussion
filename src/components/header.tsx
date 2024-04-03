@@ -17,7 +17,7 @@ export default function Header() {
         <Suspense>{/* <SearchInput /> */}</Suspense>
         <div className="flex items-center gap-1">
           <Link
-            href="https://github.com/yashug/Discuss"
+            href="https://github.com/DrakeAlia/njs14-discuss"
             target="_blank"
             rel="noreferrer"
           >
