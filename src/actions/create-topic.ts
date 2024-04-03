@@ -1,21 +1,21 @@
 "use server";
 
-import type { Topic } from "@prisma/client";
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
 import { z } from "zod";
-import { auth } from "@/auth";
 import { db } from "@/db";
+import { auth } from "@/auth";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
+import type { Topic } from "@prisma/client";
 import paths from "@/paths";
 
 const createTopicSchema = z.object({
-    name: z
-        .string()
-        .min(3)
-        .regex(/^[a-z-]+$/, {
-            message: "must be lowercase letters and dashes without spaces",
-        }),
-    description: z.string().min(10),
+  name: z
+    .string()
+    .min(3)
+    .regex(/^[a-z-]+$/, {
+      message: "Must be lowercase letters and dashes without spaces",
+    }),
+  description: z.string().min(10),
 });
 
 interface createTopicFormState {
@@ -33,9 +33,12 @@ export async function createTopic(
   const result = createTopicSchema.safeParse({
     name: formData.get("name"),
     description: formData.get("description"),
-  });
 
+  });
+  // console.log(result)
+  
   if (!result.success) {
+    // console.log(result.error.flatten().fieldErrors)
     return {
       errors: result.error.flatten().fieldErrors,
     };

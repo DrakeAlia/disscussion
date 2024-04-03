@@ -10,7 +10,7 @@ export default function Footer() {
             href={siteConfig.links.twitter}
             target="_blank"
             rel="noreferrer"
-            className="font-medium underline underline-offset-4"
+            className="font-semibold underline underline-offset-4"
           >
             DrakeAlia
           </a>
@@ -19,7 +19,7 @@ export default function Footer() {
             href={siteConfig.links.github}
             target="_blank"
             rel="noreferrer"
-            className="font-medium underline underline-offset-4"
+            className="font-semibold underline underline-offset-4"
           >
             GitHub
           </a>
