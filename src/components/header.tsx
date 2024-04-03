@@ -5,6 +5,7 @@ import { buttonVariants } from "@/components/ui/button";
 import HeaderAuth from "@/components/header-auth";
 // import { SearchInput } from "@/components/search-input";
 import { Suspense } from "react";
+import { ModeToggle } from "./mode-toggle";
 
 export default function Header() {
   return (
@@ -50,6 +51,7 @@ export default function Header() {
               <span className="sr-only">Twitter</span>
             </div>
           </Link>
+          <ModeToggle />
           <HeaderAuth />
         </div>
       </nav>
