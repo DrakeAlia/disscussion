@@ -13,7 +13,6 @@ import {
   DialogTitle,
   DialogFooter,
 } from "../ui/dialog";
-import { Popover, PopoverTrigger, PopoverContent } from "../ui/popover";
 import FormButton from "../common/form-button";
 import * as actions from "@/actions";
 
@@ -21,6 +20,7 @@ export default function TopicCreateForm() {
   const [formState, action] = useFormState(actions.createTopic, {
     errors: {},
   });
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -35,7 +35,7 @@ export default function TopicCreateForm() {
             <div className="grid gap-2">
               <Label htmlFor="name">Name</Label>
               <Input id="name" name="name" autoFocus placeholder="Name" />
-              <span className="text-red-400">
+              <span className="text-red-500">
                 {formState.errors.name?.join(", ")}
               </span>
             </div>
@@ -46,13 +46,13 @@ export default function TopicCreateForm() {
                 name="description"
                 placeholder="Describe your topic"
               />
-              <span className="text-red-400">
+              <span className="text-red-500">
                 {formState.errors.description?.join(", ")}
               </span>
             </div>
-            <span className="text-red-400">
+            <div className="text-red-500">
               {formState.errors._form?.join(", ")}
-            </span>
+            </div>
           </div>
           <DialogFooter>
             <FormButton>Submit</FormButton>

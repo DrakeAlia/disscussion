@@ -1,4 +1,4 @@
-import TopicCreateForm from "@/components/topics/topic-create-from";
+import TopicCreateForm from "@/components/topics/topic-create-form";
 // import TopicsList from "@/components/topics/topics-list";
 // import PostList from "@/components/posts/post-list";
 // import { fetchTopPosts } from "@/db/queries/posts";

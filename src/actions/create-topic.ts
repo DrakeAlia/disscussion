@@ -1,11 +1,11 @@
 "use server";
 
+import type { Topic } from "@prisma/client";
 import { z } from "zod";
 import { db } from "@/db";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
-import type { Topic } from "@prisma/client";
 import paths from "@/paths";
 
 const createTopicSchema = z.object({
@@ -33,10 +33,9 @@ export async function createTopic(
   const result = createTopicSchema.safeParse({
     name: formData.get("name"),
     description: formData.get("description"),
-
   });
   // console.log(result)
-  
+
   if (!result.success) {
     // console.log(result.error.flatten().fieldErrors)
     return {
