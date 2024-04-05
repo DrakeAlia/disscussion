@@ -1,5 +1,5 @@
 import TopicCreateForm from "@/components/topics/topic-create-form";
-// import TopicsList from "@/components/topics/topics-list";
+import TopicsList from "@/components/topics/topic-list";
 // import PostList from "@/components/posts/post-list";
 // import { fetchTopPosts } from "@/db/queries/posts";
 import { Separator } from "@/components/ui/separator";
@@ -17,7 +17,7 @@ export default async function Home() {
         <TopicCreateForm />
         <Separator className="my-2" />
         <h3 className="text-lg font-semibold mb-4">Topics</h3>
-        {/* <TopicsList /> */}
+        <TopicsList />
       </div>
     </section>
   );

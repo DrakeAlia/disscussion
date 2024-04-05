@@ -55,7 +55,7 @@ export default function TopicCreateForm() {
             </div>
           </div>
           <DialogFooter>
-            <FormButton>Submit</FormButton>
+            <FormButton>Create Topic</FormButton>
           </DialogFooter>
         </form>
       </DialogContent>
