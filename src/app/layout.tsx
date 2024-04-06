@@ -5,30 +5,29 @@ import "@/styles/globals.css";
 
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
+import { ThemeProvider } from "@/components/theme-provider";
 import Providers from "@/app/providers";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
   keywords: [
+    "TypeScript",
     "Next.js",
     "React",
+    "NextAuth",
     "Tailwind CSS",
-    "Server Components",
-    "Server Actions",
     "Shadcn UI",
     "Radix UI",
     "Prisma ORM",
     "Zod",
-    "NextAuth",
   ],
   authors: [
     {
       name: "DrakeAlia",
-      url: "https://yg-dev.com",
+      url: "",
     },
   ],
   creator: "DrakeAlia",
@@ -40,7 +39,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     // images: [siteConfig.ogImage],
-    creator: "@urstrulyyashu5",
+    creator: "@drakealia",
   },
   icons: {
     icon: "/favicon.ico",

@@ -81,7 +81,7 @@ export async function createPost(
     } else {
       return {
         errors: {
-          _form: ["Something went wrong"],
+          _form: ["Failed to create post"],
         },
       };
     }
