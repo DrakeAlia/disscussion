@@ -1,9 +1,9 @@
 import Link from "next/link";
+import HeaderAuth from "@/components/header-auth";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
 import { buttonVariants } from "@/components/ui/button";
-import HeaderAuth from "@/components/header-auth";
-// import { SearchInput } from "@/components/search-input";
+import { SearchInput } from "@/components/search-input";
 import { Suspense } from "react";
 import { ModeToggle } from "./mode-toggle";
 
@@ -15,7 +15,9 @@ export default function Header() {
           <Icons.logo className="h-6 w-6" />
           <span className="hidden font-bold sm:inline-block">Discuss</span>
         </Link>
-        <Suspense>{/* <SearchInput /> */}</Suspense>
+        <Suspense>
+          <SearchInput />
+        </Suspense>
         <div className="flex items-center gap-1">
           <Link
             href="https://github.com/DrakeAlia/njs14-discuss"

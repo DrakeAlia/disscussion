@@ -1,7 +1,7 @@
 import TopicCreateForm from "@/components/topics/topic-create-form";
 import TopicsList from "@/components/topics/topic-list";
-// import PostList from "@/components/posts/post-list";
-// import { fetchTopPosts } from "@/db/queries/posts";
+import PostList from "@/components/posts/post-list";
+import { fetchTopPosts } from "@/db/queries/posts";
 import { Separator } from "@/components/ui/separator";
 
 export const revalidate = 10;
@@ -11,7 +11,7 @@ export default async function Home() {
     <section className="container grid grid-cols-4 gap-4 px-6 pt-8 md:pt-12">
       <div className="col-span-3">
         <h1 className="text-2xl font-bold mb-4">Top Posts</h1>
-        {/* <PostList fetchData={fetchTopPosts} /> */}
+        <PostList fetchData={fetchTopPosts} />
       </div>
       <div className="border shadow py-3 px-2 min-w-fit">
         <TopicCreateForm />

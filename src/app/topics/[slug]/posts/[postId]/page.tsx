@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Suspense } from "react";
 import PostShow from "@/components/posts/post-show";
 import CommentList from "@/components/comments/comment-list";
 import CommentCreateForm from "@/components/comments/comment-create-form";
 import PostShowLoading from "@/components/posts/post-show-loading";
 import paths from "@/paths";
+import { Suspense } from "react";
 
 interface PostShowPageProps {
   params: {
