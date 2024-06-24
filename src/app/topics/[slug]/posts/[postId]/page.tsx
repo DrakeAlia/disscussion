@@ -12,7 +12,7 @@ interface PostShowPageProps {
     postId: string;
   };
 }
-
+// The PostShowPage component is a page component that displays a single post and its comments.
 export default async function PostShowPage({ params }: PostShowPageProps) {
   const { slug, postId } = params;
 

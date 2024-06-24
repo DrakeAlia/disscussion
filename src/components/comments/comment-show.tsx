@@ -1,7 +1,5 @@
-import Image from "next/image";
 import CommentCreateForm from "./comment-create-form";
 import { fetchCommentsByPostId } from "@/db/queries/comments";
-import { Label } from "../ui/label";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 interface CommentShowProps {
